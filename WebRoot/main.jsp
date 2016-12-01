@@ -128,7 +128,7 @@ body {
 	<hr class="container">
 	
 	<footer class="container">
-		<p>Bring you closer.</p>
+		<p>  @2016 ZTE Inc</p>
 		<br/>
 
 	</footer>

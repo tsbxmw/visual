@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sqlMap>
 	<workinfo name="workInfo">
+	    <!-- add userid to the workinfo table -->
 		<insert id="insertWorkInfo">
 			insert into workinfo(name,work,feel,date,team,userid) 
 			values(?,?,?,?,?,?)
@@ -8,17 +9,21 @@
 		<getWorkInfoByDate id="getWorkInfoByDate">
 			select * from workinfo where date=?
 		</getWorkInfoByDate>
+		<!-- update the user id -->
 		<updateWorkInfo id="updateWorkInfo">
 			update workinfo set
-			work=?,feel=?,team=?,userid=?
-			where name=? and date=?
+			work=?,feel=?,team=?
+			where userid=? and name=? and date=?
 		</updateWorkInfo>
+		
 		<!-- "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" -->
 		<!-- modify by mengwei at 20161201 -->
+		
 		<deleteWorkInfo id="deleteWorkInfo">
 		    delete from workinfo
 		    where userid=?
 		</deleteWorkInfo>
+		<!-- find the line is exist with the current userid and date -->
 		<infoIsExist id="infoIsExist">
 		    select userid from workinfo
 		    where userid=? and date=?

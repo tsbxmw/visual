@@ -35,7 +35,7 @@ if(result1==null)
 		.btn span i { background-position: bottom right; margin-bottom: 0; position: absolute; left: 100%; width: 10px; height: 100%; top: 0; }  
 		.btn span span { background-position: top right; position: absolute; right: -10px; margin-left: 10px; top: -5px; height: 0; }  
 		* html .btn span,  
-		* html .btn i { float: left; width: auto; background-image: none; cursor: pointer; }  
+		* html .btn i { float: left; width: 100px; background-image: none; cursor: pointer; }  
 		.btn.blue { background: #2ae; }  
 		.btn.green { background: #9d4; }  
 		.btn.pink { background: #e1a; }  
@@ -61,18 +61,25 @@ if(result1==null)
   <center>
 <div>
 <h1>用户管理</h1>
-
-<form action="ManageServlet" method="post" style=" border:1px solid #006600">
+<div  style="float:left;width:50%;height:400px">
+<form id="form1"action="ManageServlet" method="post" style="background:#C1FFE4; border:1px solid #006600" >
 	<table>
+	
+	<tr>
+	<td colspan="3" align="center"><h2>添加用户</h2></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
 	<tr>
 	<th width="66" align="right"><font size="3">姓名</font></td>
-	<td colspan="2"><input type="text" name="username"  placeholder="姓名" style="width:200;height:25;"/></td>
+	<td colspan="3"><input type="text" name="username"  placeholder="姓名" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
 	<td width="66" align="right"><font size="3">邮箱</font></td><td colspan="2"><input type="text" name="email"  placeholder="example@zte.com.cn" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
-	<td width="66" align="right"><font size="3">工号</font></td><td colspan="2"><input type="text" name="user_id" placeholder="8位工号" style="width:200;height:25;"/></td>
+	<td width="66" align="right"><font size="3">工号</font></td><td colspan="2"><input type="text" name="user_id" placeholder="8或10位工号" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
 	<td width="66" align="right">性别</td>
@@ -87,23 +94,28 @@ if(result1==null)
 	<tr>
 	<!-- <td width="66" align="right"><font size="3">科室</font></td><td colspan="2"><input type="text" name="team"  style="width:200;height:25;"/></td> -->
 	<td width="66" align="right"><font size="3">科室</font></td>
-	<td width="100"  >
+	<td width="66"  >
 	<select id="team" name="team" width="100" >
 		<option value ="sh_shiyan">---上海实验科---</option>  
  		<option value ="nj_shiyan">---南京实验科---</option>  
   		<option value="sh_chanpin">---上海产品科---</option>  
- 		<option value="nj_chanpin">---南京产品科---</option>  
+ 		<option value="nj_chanpin">---南京产品科---</option>
 	</select></td>
 	</tr>
 	
 	<tr>
-	<input type="text" id="flag" name="flag" value="query" style="visibility: hidden"> 
-	<td colspan="3" align="center" ><button width="200px" id="addnewuser" onclick="addNewUser()" class="btn green">添加 </button></td>
+	<input type="text" id="flag" name="flag" value="query" style="visibility: hidden;height:30px"> 
+	<td colspan="3" align="center" ><button id="addnewuser" onclick="addNewUser()" style="width:170px"class="btn  green">添加 </button></td>
 	</tr>
 	<tr>
 	<td colspan="3" align="center" > Result:<%=result %></td> 
 
 	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	<tr>
+	<!-- 
 	<tr>
 	<td colspan="3" align="center">-----------------------------------</td>
 	</tr>
@@ -113,7 +125,56 @@ if(result1==null)
 	</tr>
 	<tr>
 	<td colspan="3" align="center">
-	<button id="removeuser" onclick="removeUser()" width="100px" class="btn blue">移除</button>
+	<button id="removeuser" onclick="removeUser()" style="width:170px" class="btn blue">移除</button>
+	</td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"> Result:<%=result1 %></td>
+	
+	</tr>
+	
+	<tr>
+	<td colspan="3" align="center">-----------------------------------</td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center">
+	
+	<input type="button" id="quit" style="width:170px" value="退出" onclick="if(confirm('是否退出?')) location.replace('./main.jsp');" class="btn pink">
+	
+	</td></tr> -->
+	</table>
+	</form>
+	</div>
+	<div style="float:left;width:50%;height:400px">	
+	<form id="form2"action="ManageServlet" method="post"  style="background:#FFAD86; border:1px solid #006600">
+	<table>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"><h2>删除用户</h2></td>
+	</tr>
+	
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	
+	<tr>
+	<td width="66" align="right"><font size="3">工号</font></td><td colspan="2"><input type="text" name="username_rm" placeholder="8或者10位工号" style="width:200;height:25;"/></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	<tr>
+	<td colspan="3" align="center">
+	<input type="text" id="flag" name="flag" value="removeUser" style="visibility: hidden"> 
+	<button id="removeuser" onclick="removeUser()" style="width:170px" class="btn blue">移除</button>
 	</td>
 	</tr>
 	<tr>
@@ -121,16 +182,26 @@ if(result1==null)
 	
 	</tr>
 	<tr>
-	<td colspan="3" align="center">-----------------------------------</td>
+	<td colspan="3" align="center"><br></td>
 	</tr>
+	<tr>
+	<td colspan="3" align="center"><br></td>
+	</tr>
+	</table>
+	</form>
+	</div>
+	<div style="float:center">	
+	<form action="ManageServlet" method="post"  style=" width:400px;heigt:400px;">
+	<table>
 	<tr>
 	<td colspan="3" align="center">
 	
-	<input type="button" id="quit" value="退出" onclick="if(confirm('是否退出?')) location.replace('./main.jsp');" class="btn pink">
+	<input type="button" id="quit" style="width:170px" value="退出" onclick="if(confirm('是否退出?')) location.replace('./main.jsp');" class="btn pink">
 	
 	</td></tr>
 	</table>
 	</form>
+	</div>
 	<div>
 	<tr>
 	<td  colspan="3" align="center">
@@ -139,6 +210,7 @@ if(result1==null)
 	 </tr>
 	</div> 
 </div>
+
 </center>
 
  <script type="text/javascript">
@@ -155,11 +227,11 @@ if(result1==null)
         	}
         }
         
-        document.forms[0].submit();
+        document.getElementById("form1").submit();
     }
     function removeUser() {
         document.getElementById("flag").value="removeUser";
-        document.forms[0].submit();
+        document.getElementById("form2").submit();
     }
     function Quit() {
         document.getElementById("flag").value="quit";
@@ -168,6 +240,13 @@ if(result1==null)
         }
     }
 </script>
+
   </body>
- 
+  <div>
+  <hr class="container">
+	 <footer class="container">
+		<p>  @2016 ZTE Inc</p>
+		<br/>
+	</footer>
+	</div>
 </html>
