@@ -34,13 +34,13 @@
 <link rel="stylesheet" href="css/bootstrap-table.css">
 <link rel="stylesheet" href="css/examples.css">
 
-<!-- Le Google font -->
+<!-- Le Google font 
 <link
 	href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:400,300'
 	rel='stylesheet' type='text/css'>
-
+-->
 
 <!-- You can delete this later -->
 <style>
