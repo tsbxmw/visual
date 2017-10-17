@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.visual.dao.IUserDao;
 import com.visual.dao.impl.UserDaoImpl;
-import com.visual.domain.User;
 @WebServlet("/LoginServlet")
 public class Login extends HttpServlet {
 
@@ -23,7 +21,7 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		String verifyc  = request.getParameter("verifycode");
 		
-		//<span style="font-family: Arial, Helvetica, sans-serif;">//µÃµ½±íµ¥ÊäÈëµÄÄÚÈİ</span>
+		//<span style="font-family: Arial, Helvetica, sans-serif;">//é”ŸçŸ«ç¢‰æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿï¿½</span>
 		String svc =(String) request.getSession().getAttribute("sessionverify");
 		
 		
@@ -34,23 +32,23 @@ public class Login extends HttpServlet {
 
 
 		if(username==null||username==""){
-			request.setAttribute("msg", "ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡");
+			request.setAttribute("msg", "User Name can not be NULL ");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			return;
 		}
 		if(!psw){
-			request.setAttribute("msg", "Ã»ÓĞÕâ¸öÓÃ»§£¡");
+			request.setAttribute("msg", "User not exist !");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			return;
 		}
 		if(psw&&!pass_psw.equals(password)){
-			request.setAttribute("msg", "ÃÜÂë´íÎóÇëÖØĞÂÊäÈë£¡");
+			request.setAttribute("msg", "Password is wrong ! ");
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			return;
 		}
 
 		if(pass_psw.equals(password)){
-			request.setAttribute("msg", "ÓÃ»§£º"+username+",»¶Ó­·ÃÎÊ");
+			request.setAttribute("msg", "welcome "+username+", now login");
 			request.getRequestDispatcher("/edit.jsp").forward(request, response);
 			response.setHeader("Refresh","1;url=edit.jsp");
 			return;

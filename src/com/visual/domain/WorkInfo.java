@@ -1,6 +1,6 @@
 package com.visual.domain;
 
-import com.sdicons.json.validator.impl.predicates.Int;
+
 
 public class WorkInfo {
 	

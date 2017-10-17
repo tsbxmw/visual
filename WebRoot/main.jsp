@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>工作可视化系统</title>
+<title>测试数据可视化系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -61,7 +61,7 @@ body {
 				<div class="nav-collapse collapse">
 					
 						<ul class="nav">
-							<li><a href="main.jsp" style="font-size:25px">工作可视化看板</a></li>
+							<li><a href="main.jsp" style="font-size:25px">测试数据看板</a></li>
 						</ul>
 					
 						<ul class="nav navbar-nav navbar-right">
@@ -72,18 +72,7 @@ body {
 							<td>
 								<select  name="team" id="team" onchange="Select()">
 								<option value="select" >----选择----</option>
-								<option value="sh_shiyan" >----上海实验科----</option>
-								<option  value="sh_chanpin" >----上海产品科----</option>
-								<option  value="nj_shiyan" >----南京实验科----</option>
-								<option  value="nj_chanpin1" >----南京产品测试一科----</option>
-								<option  value="nj_chanpin2" >----南京产品测试二科----</option>
-								<option value="xa_chanpin1">----西安产品测试一科----</option>
-								<option value="xa_chanpin2">----西安产品测试二科----</option>
-								<option value="xa_chanpin3">----西安产品测试三科----</option>
-								<option value="xa_shiyan">----西安实验科----</option>
-								<option value="ceshiguihua">----软件测试规划科----</option>
-								<option value="xiangmuguanli">----项目测试管理科----</option>
-								
+								<option value="sh_shiyan" >----测试数据项----</option>
 								</select>
 							</td>
 						</form>
@@ -122,9 +111,9 @@ body {
 		<table id="table">
             <thead>
             <tr>
-                <th class="span2" data-field="name">姓名</th>
-                <th class="span2" data-field="userid">工号</th>
-                <th class="span5" data-field="work">我的工作</th>
+                <th class="span2" data-field="name">测试项</th>
+                <th class="span2" data-field="userid">序号</th>
+                <th class="span5" data-field="work"></th>
                 <th class="span5" data-field="feel">我的心情</th>
                 <th class="span2" data-field="action">操作</th>
                 
@@ -136,7 +125,7 @@ body {
 	<hr class="container">
 	
 	<footer class="container">
-		<p>  @2016 ZTE Inc</p>
+		<p>  @2016-2017 Wei.Meng Inc</p>
 		<br/>
 
 	</footer>
@@ -200,7 +189,7 @@ body {
    var name1=encodeURIComponent(name);
    var userid = $(this).parent().parent().find('td').eq(1).text();
    var userid1 = encodeURIComponent(userid);
-   var work =$('textarea[name="work"]').val();
+   VAR WORK =$('TEXTAREA[NAME="WORK"]').VAL();
    var work1 = encodeURIComponent(work);
    var feel =$('textarea[name="feel"]').val();
    var feel1 = encodeURIComponent(feel);

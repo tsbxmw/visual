@@ -66,7 +66,7 @@ public class ManageServlet extends HttpServlet {
 				return;
 			}
 			if(team==null||team==""){
-				request.setAttribute("result", "科室不能为空！");
+				request.setAttribute("result", "组别不能为空！");
 				request.getRequestDispatcher("/edit.jsp").forward(request, response);
 				return;
 			}
@@ -87,7 +87,7 @@ public class ManageServlet extends HttpServlet {
 				request.getRequestDispatcher("/edit.jsp").forward(request, response);
 				return;
 			}
-			if(!email.endsWith("@zte.com.cn")){
+			if(!email.endsWith(".com")){
 				request.setAttribute("result", "邮箱地址不正确！");
 				request.getRequestDispatcher("/edit.jsp").forward(request, response);
 				return;

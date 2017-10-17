@@ -76,10 +76,10 @@ if(result1==null)
 	<td colspan="3"><input type="text" name="username"  placeholder="姓名" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
-	<td width="66" align="right"><font size="3">邮箱</font></td><td colspan="2"><input type="text" name="email"  placeholder="example@zte.com.cn" style="width:200;height:25;"/></td>
+	<td width="66" align="right"><font size="3">邮箱</font></td><td colspan="2"><input type="text" name="email"  placeholder="example@qq.com" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
-	<td width="66" align="right"><font size="3">工号</font></td><td colspan="2"><input type="text" name="user_id" placeholder="8或10位工号" style="width:200;height:25;"/></td>
+	<td width="66" align="right"><font size="3">工号</font></td><td colspan="2"><input type="text" name="user_id" placeholder="numbers" style="width:200;height:25;"/></td>
 	</tr>
 	<tr>
 	<td width="66" align="right">性别</td>
@@ -93,20 +93,11 @@ if(result1==null)
 	
 	<tr>
 	<!-- <td width="66" align="right"><font size="3">科室</font></td><td colspan="2"><input type="text" name="team"  style="width:200;height:25;"/></td> -->
-	<td width="66" align="right"><font size="3">科室</font></td>
+	<td width="66" align="right"><font size="3">team</font></td>
 	<td width="66"  >
 	<select id="team" name="team" width="100" >
-		<option value="sh_shiyan" >----上海实验科----</option>
-								<option  value="sh_chanpin" >----上海产品科----</option>
-								<option  value="nj_shiyan" >----南京实验科----</option>
-								<option  value="nj_chanpin1" >----南京产品测试一科----</option>
-								<option  value="nj_chanpin2" >----南京产品测试二科----</option>
-								<option value="xa_chanpin1">----西安产品测试一科----</option>
-								<option value="xa_chanpin2">----西安产品测试二科----</option>
-								<option value="xa_chanpin3">----西安产品测试三科----</option>
-								<option value="xa_shiyan">----西安实验科----</option>
-								<option value="ceshiguihua">----软件测试规划科----</option>
-								<option value="xiangmuguanli">----项目测试管理科----</option>
+		<option value="sh_shiyan" >----test----</option>
+								
 	</select></td>
 	</tr>
 	
@@ -252,7 +243,7 @@ if(result1==null)
   <div>
   <hr class="container">
 	 <footer class="container">
-		<p>  @2016 ZTE Inc</p>
+		<p>  @2016 mengwei Inc</p>
 		<br/>
 	</footer>
 	</div>
